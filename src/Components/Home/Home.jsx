@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import coverPic from '../../../src/assets/images/cover.png'
 import Category from '../Category/Category';
+import Job from '../Job/Job';
+
 
 const Home = () => {
     const [categories, setCategories] = useState([]);
@@ -10,6 +12,9 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
+
+    const jobs = useLoaderData()
+    // console.log(jobs);
     return (
         <div>
             <div className='my-container flex flex-col items-center justify-between lg:flex-row'>
@@ -53,6 +58,21 @@ const Home = () => {
                         categories.map(category => <Category key={category.id} category={category}></Category>)
                     }
                 </div>
+            </div>
+            {/* Featured Jobs start  */}
+            <div className='my-container'>
+                <div className=' flex flex-col items-center mb-6'>
+                    <h1 className='text-3xl font-bold py-3'>Featured Jobs</h1>
+                    <p className='font-thin'>It takes just one job to develop a successful relationship that can propel your career forward.</p>
+                </div>
+                <div className=' grid grid-cols-1 md:grid-cols-2 justify-center'>
+                    {
+                        jobs.map(job => <Job key={job.id} job={job}></Job>)
+                    }
+                </div>
+                <Link to='/appliedJobs' className='flex justify-center'>
+                    <span className='py-4 px-10  bg-blue-400 hover:bg-blue-700 rounded'>See All Jobs</span>
+                </Link>
             </div>
 
         </div>
