@@ -47,7 +47,7 @@ const Header = () => {
                 {/* button started  */}
                 <Link to='/appliedJobs' className='btn md:w-auto md:mr-4'>
                     <div className='inline-flex items-center justify-center w-full h-full'>
-                        <p className='mr-3'>Get Started</p>
+                        <p className='mr-3'>Start Applying</p>
                     </div>
                 </Link>
                 {/* Mobile Navbar Section */}
@@ -115,7 +115,7 @@ const Header = () => {
                                 {/* button started  */}
                                 <Link to='/appliedJobs' className='btn md:w-auto md:mr-4'>
                                     <div className='inline-flex items-center justify-center w-full h-full'>
-                                        <p className='mr-3'>Get Started</p>
+                                        <p className='mr-3'>Start Applying</p>
                                     </div>
                                 </Link>
                             </div>
