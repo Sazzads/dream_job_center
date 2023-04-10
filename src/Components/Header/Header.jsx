@@ -19,6 +19,11 @@ const Header = () => {
 
                 {/* Nav Items Section */}
                 <ul className='items-center hidden space-x-8 lg:flex'>
+                <li>
+                                            <Link to='/' className='default'>
+                                                Home
+                                            </Link>
+                                        </li>
                     <li>
                         <NavLink
                             to='/statistics'
@@ -87,6 +92,11 @@ const Header = () => {
                                 {/* Mobile Nav Items Section */}
                                 <nav>
                                     <ul className='space-y-4'>
+                                        <li>
+                                            <Link to='/' className='default'>
+                                                Home
+                                            </Link>
+                                        </li>
                                         <li>
                                             <Link to='/statistics' className='default'>
                                                 Statistics
