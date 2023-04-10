@@ -10,13 +10,11 @@ const Home = () => {
         <div className='max-w-xl mb-6 lg:mt-8'>
        
           <h2 className='max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none'>
-            A reader lives a <br className='hidden md:block' /> thousand lives{' '}
-            <span className='inline-block text-blue-400'>before he dies</span>
+          The mind is its  own place, and in itself can make a{' '}
+            <span className=' text-blue-400'> heaven of hell,</span><span className='text-blue-400'> a hell of heaven.</span>
           </h2>
           <p className='text-base text-gray-700 md:text-lg'>
-            Books are a uniquely portable magic. Books serve to show a man that
-            those original thoughts of his aren’t very new after all. The man
-            who does not read good books is no better than the man who can’t.
+          Explore career options. Follow your passion. Rise to your potential. Syracuse University’s programs connect you with leading scientists and scholars who can prepare you for the careers of today and tomorrow.
           </p>
         </div>
         <div className='flex flex-col items-center md:flex-row'>
