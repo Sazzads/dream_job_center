@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import coverPic from '../../../src/assets/images/cover.png'
 import Category from '../Category/Category';
-// import Job from '../Job/Job';
 import { MapPinIcon, CurrencyDollarIcon } from '@heroicons/react/24/solid'
 
 
@@ -16,6 +15,9 @@ const Home = () => {
 
     const jobs = useLoaderData()
     // console.log(jobs);
+
+
+
     return (
         <div>
             <div className='my-container flex flex-col items-center justify-between lg:flex-row'>
@@ -86,7 +88,7 @@ const Home = () => {
                                 </span>
                             </div>
                             <div className='flex flex-col items-center md:flex-row'>
-                                <Link to={`/job/${job.id}`} className='btn md:w-auto md:mr-4'>
+                                <Link  to={`/job/${job.id}`} className='btn md:w-auto md:mr-4'>
                                     <div className='inline-flex  items-center justify-center w-full h-full'>
                                         <p className='mr-3'>View Details</p>
                                     </div>
@@ -96,6 +98,8 @@ const Home = () => {
                             )
                     }
                 </div>
+
+                
                 <Link to='/appliedJobs' className='flex justify-center'>
                     <span className='py-4 px-10  bg-blue-400 hover:bg-blue-700 rounded'>See All Jobs</span>
                 </Link>
