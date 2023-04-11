@@ -107,7 +107,6 @@ const Home = () => {
                     }
                 </div>
 
-
                 <Link onClick={handleSeeAllJobsClick} to='/' className='flex justify-center'>
                     <span className='py-4 px-10  bg-blue-400 hover:bg-blue-700 rounded text-white'>See All Jobs</span>
                 </Link>

@@ -50,7 +50,6 @@ const JobDetails = () => {
                             <p className='mb-2'>Phone: <span className='font-thin'>{jobData.phone}</span></p>
                             <p className='mb-2'>Email: <span className='font-thin'>{jobData.email}</span></p>
                             <p className='mb-2'>Address: <span className='font-thin'>{jobData.location}</span></p>
-
                         </div>
 
                     </div>

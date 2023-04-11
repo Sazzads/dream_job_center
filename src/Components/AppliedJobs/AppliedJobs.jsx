@@ -6,16 +6,8 @@ import { MapPinIcon, CurrencyDollarIcon } from '@heroicons/react/24/solid'
 
 const AppliedJobs = () => {
 
-    // let myData = JSON.parse(localStorage.getItem('myData'));
-
-    // Update the content of your page with the data
-    // let dataContainer = document.getElementById('data-container');
-    // dataContainer.innerHTML = JSON.stringify(myData);
     const pData = useLoaderData()
-
-
     let cart = [];
-
     const savedCart = getStoredCart()
     for (const id in savedCart) {
         const foundProduct = pData.find(product => product.id === id)
@@ -23,11 +15,10 @@ const AppliedJobs = () => {
             cart.push(foundProduct)
         }
     }
-    // console.log(cart);
+    console.log(cart);
 
     return (
         <div className='my-container'>
-            {/* <h1>Applied job page{myData}</h1> */}
             <h1 className='text-5xl text-center'>Applied Jobs</h1>
             {
                 cart.map(jobCart => (
