@@ -16,6 +16,14 @@ const Home = () => {
     const jobs = useLoaderData()
     // console.log(jobs);
 
+    // start slice 4 data
+    const [showAllJobs, setShowAllJobs] = useState(false);
+
+    const handleSeeAllJobsClick = () => {
+        setShowAllJobs(true);
+    };
+    const displayedJobs = showAllJobs ? jobs : jobs.slice(0, 4);
+
 
 
     return (
@@ -70,37 +78,37 @@ const Home = () => {
                 </div>
                 <div className=' grid grid-cols-1 md:grid-cols-2 justify-center'>
                     {
-                        jobs.map(job => 
+                        displayedJobs.map(job =>
                             <div key={job.id} className="border p-10 m-10">
-                            <img className='h-20 w-35 mb-3' src={job.logo} alt="" />
-                            <h3 className='font-bold mb-1'>{job.title}</h3>
-                            <p className='font-thin text-sm mb-1'>{job.name}</p>
-                            <div className='flex'>
-                                <span className='border px-2 py-1 rounded border-blue-700 hover:bg-blue-200 cursor-pointer me-2'>{job.position1}</span>
-                                <span className='border px-2 py-1 rounded border-blue-700 hover:bg-blue-200 cursor-pointer'>{job.position2}</span>
+                                <img className='h-20 w-35 mb-3' src={job.logo} alt="" />
+                                <h3 className='font-bold mb-1'>{job.title}</h3>
+                                <p className='font-thin text-sm mb-1'>{job.name}</p>
+                                <div className='flex'>
+                                    <span className='border px-2 py-1 rounded border-blue-700 hover:bg-blue-200 cursor-pointer me-2'>{job.position1}</span>
+                                    <span className='border px-2 py-1 rounded border-blue-700 hover:bg-blue-200 cursor-pointer'>{job.position2}</span>
+                                </div>
+                                <div className='flex'>
+                                    <span className='flex text-sm my-2 me-3'>
+                                        <MapPinIcon className="h-5 w-5 text-gray-500  " />{job.location}
+                                    </span>
+                                    <span className='flex text-sm my-2'>
+                                        <CurrencyDollarIcon className="h-5 w-5 text-gray-500 " />{job.salary}
+                                    </span>
+                                </div>
+                                <div className='flex flex-col items-center md:flex-row'>
+                                    <Link to={`/job/${job.id}`} className='btn md:w-auto md:mr-4'>
+                                        <div className='inline-flex  items-center justify-center w-full h-full'>
+                                            <p className='mr-3'>View Details</p>
+                                        </div>
+                                    </Link>
+                                </div>
                             </div>
-                            <div className='flex'>
-                                <span className='flex text-sm my-2 me-3'>
-                                    <MapPinIcon className="h-5 w-5 text-gray-500  " />{job.location}
-                                </span>
-                                <span className='flex text-sm my-2'>
-                                    <CurrencyDollarIcon className="h-5 w-5 text-gray-500 " />{job.salary}
-                                </span>
-                            </div>
-                            <div className='flex flex-col items-center md:flex-row'>
-                                <Link  to={`/job/${job.id}`} className='btn md:w-auto md:mr-4'>
-                                    <div className='inline-flex  items-center justify-center w-full h-full'>
-                                        <p className='mr-3'>View Details</p>
-                                    </div>
-                                </Link>
-                            </div>
-                        </div>
-                            )
+                        )
                     }
                 </div>
 
-                
-                <Link to='/appliedJobs' className='flex justify-center'>
+
+                <Link onClick={handleSeeAllJobsClick} to='/' className='flex justify-center'>
                     <span className='py-4 px-10  bg-blue-400 hover:bg-blue-700 rounded'>See All Jobs</span>
                 </Link>
             </div>

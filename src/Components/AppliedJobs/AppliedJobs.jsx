@@ -68,8 +68,6 @@ const AppliedJobs = () => {
                             </div>
                         </div>
                     </li>
-
-
                 ))
             }
         </div>

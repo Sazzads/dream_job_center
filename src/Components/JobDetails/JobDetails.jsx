@@ -21,25 +21,6 @@ const JobDetails = () => {
         return <div>Loading...</div>;
     }
 
-    //local storage
-    // const handleAddToJob = (id) => {
-    //     // const previousId = JSON.parse(localStorage.getItem("job-id"))
-    //     // if (previousId) {
-
-    //     // }
-    //     // else {
-    //     //     localStorage.setItem("job-id", id)
-    //     // }
-    //     // console.log(previousWatchTime)
-
-    //     let existingData = JSON.parse(localStorage.getItem('myData')) || [];
-
-    //     // Modify the data as necessary
-    //     existingData.push(id);
-
-    //     // Store the updated data back into local storage
-    //     localStorage.setItem('myData', JSON.stringify(existingData));
-    // }
     const handleAddToJob = () => {
         // console.log(id);
         addToDb(id)
@@ -73,7 +54,7 @@ const JobDetails = () => {
                         </div>
 
                     </div>
-                    <Link onClick={() => handleAddToJob(id)} to='/' className='btn md:w-auto md:mr-4 mt-4'>
+                    <Link onClick={() => handleAddToJob(id)} to='' className='btn md:w-auto md:mr-4 mt-4'>
                         <div className='inline-flex  items-center justify-center w-full h-full'>
                             <p className='mr-3'>Apply Now </p>
                         </div>
