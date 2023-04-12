@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { getStoredCart } from '../../Utils/fakeDB';
 import { Link, useLoaderData } from 'react-router-dom';
 import { MapPinIcon, CurrencyDollarIcon } from '@heroicons/react/24/solid'
+import banner from '../../assets/images/banner.png'
 
 
 const AppliedJobs = () => {
@@ -32,13 +33,20 @@ const AppliedJobs = () => {
     })
 
     return (
-        <div className='my-container'>
-            <h1 className='text-5xl text-center'>Applied Jobs</h1>
-            <button  onClick={()=>handleFIlter("Onsite")} className='btn btn-color'>Onsite</button>
-            <button onClick={()=>handleFIlter("Remote")} className='btn btn-color'>Remote</button>
+        <div className='  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl  '>
+            <div className='relative mb-5' >
+                <h1 className='sm:text-5xl text-2xl text-center absolute inset-0 md:mt-16 mt-6 '>Applied Jobs</h1>
+                <img className='' src={banner} alt="" />
+            </div>
+
+            <div className='flex flex-row-reverse'>
+                <button onClick={() => handleFIlter("Onsite")} className='border px-3 p1-2 rounded bg-blue-700 text-white hover:bg-blue-400 mx-2'>Onsite</button>
+                <button onClick={() => handleFIlter("Remote")} className='border px-3 p1-2 rounded bg-blue-700 text-white hover:bg-blue-400 mx-2'>Remote</button>
+
+            </div>
+
             {
                 filterJob.map(jobCart => (
-
                     <li key={jobCart.id} className='flex flex-col py-6 sm:flex-row sm:justify-between'>
                         <div className='flex w-full space-x-2 sm:space-x-4'>
                             <img
