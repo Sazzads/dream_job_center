@@ -11,24 +11,23 @@ const AppliedJobs = () => {
     let cart = [];
     const savedCart = getStoredCart()
     for (const id in savedCart) {
-        const foundProduct = pData.find(product => product.id === id)
-        if (foundProduct) {
-            cart.push(foundProduct)
+        const foundJob = pData.find(job => job.id === id)
+        if (foundJob) {
+            cart.push(foundJob)
         }
     }
     console.log(cart);
 
-    // const storedCart = getStoredCart()
     const [filter, setFilter] = useState(null)
     const handleFIlter = (value) => {
         setFilter(value)
     }
-    const filterJob = pData.filter(product => {
+    const filterJob = pData.filter(job => {
         if (!filter) {
-            return savedCart && savedCart[product.id]
+            return savedCart && savedCart[job.id]
         }
         else {
-            return savedCart && savedCart[product.id] && product.position1 === filter
+            return savedCart && savedCart[job.id] && job.position1 === filter
         }
     })
 
