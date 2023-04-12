@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { getStoredCart } from '../../Utils/fakeDB';
 import { Link, useLoaderData } from 'react-router-dom';
 import { MapPinIcon, CurrencyDollarIcon } from '@heroicons/react/24/solid'
@@ -17,11 +17,27 @@ const AppliedJobs = () => {
     }
     console.log(cart);
 
+    // const storedCart = getStoredCart()
+    const [filter, setFilter] = useState(null)
+    const handleFIlter = (value) => {
+        setFilter(value)
+    }
+    const filterJob = pData.filter(product => {
+        if (!filter) {
+            return savedCart && savedCart[product.id]
+        }
+        else {
+            return savedCart && savedCart[product.id] && product.position1 === filter
+        }
+    })
+
     return (
         <div className='my-container'>
             <h1 className='text-5xl text-center'>Applied Jobs</h1>
+            <button  onClick={()=>handleFIlter("Onsite")} className='btn btn-color'>Onsite</button>
+            <button onClick={()=>handleFIlter("Remote")} className='btn btn-color'>Remote</button>
             {
-                cart.map(jobCart => (
+                filterJob.map(jobCart => (
 
                     <li key={jobCart.id} className='flex flex-col py-6 sm:flex-row sm:justify-between'>
                         <div className='flex w-full space-x-2 sm:space-x-4'>
