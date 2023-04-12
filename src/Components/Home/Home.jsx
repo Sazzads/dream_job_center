@@ -19,11 +19,11 @@ const Home = () => {
     // start slice 4 data
     const [showAllJobs, setShowAllJobs] = useState(false);
 
-    const handleSeeAllJobsClick = () => {
-        setShowAllJobs(true);
-    };
-    const displayedJobs = showAllJobs ? jobs : jobs.slice(0, 4);
+    // const handleSeeAllJobsClick = () => {
+    //     setShowAllJobs(true) ;
 
+    // };
+    const displayedJobs = jobs.slice(0, showAllJobs ? 6 : 4)
 
 
     return (
@@ -49,7 +49,7 @@ const Home = () => {
                         </Link>
                     </div>
                 </div>
-                {/* Lottie Animation */}
+
                 <div className='relative lg:w-1/2 '>
                     <div className='w-full lg:w-4/5 lg:ml-auto h-56  sm:h-96'>
                         <img src={coverPic} alt="" />
@@ -107,9 +107,12 @@ const Home = () => {
                     }
                 </div>
 
-                <Link onClick={handleSeeAllJobsClick} to='/' className='flex justify-center'>
-                    <span className='py-4 px-10  bg-blue-400 hover:bg-blue-700 rounded text-white'>See All Jobs</span>
-                </Link>
+                {
+                    showAllJobs ||
+                    <Link onClick={() => setShowAllJobs(!showAllJobs)} to='/' className='flex justify-center'>
+                        <span className='py-4 px-10  bg-blue-400 hover:bg-blue-700 rounded text-white'>See All Jobs</span>
+                    </Link>
+                }
             </div>
 
         </div>
